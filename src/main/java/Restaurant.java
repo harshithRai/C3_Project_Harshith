@@ -84,4 +84,8 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderCost(String ... itemNames) {
+        return -1;
+    }
+
 }

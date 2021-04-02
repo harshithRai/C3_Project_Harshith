@@ -67,4 +67,25 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //>>>>>>>>>>>>>>>>>>>>ORDER COST<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Test
+    public void selecting_all_items_should_return_total_of_all_itemPrices() {
+        int totalCost = restaurant.getOrderCost("Sweet corn soup", "Vegetable lasagne");
+        assertEquals(388, totalCost);
+    }
+
+    @Test
+    public void selecting_one_items_should_return_only_that_itemPrice_as_totalCost() {
+        int totalCost = restaurant.getOrderCost("Sweet corn soup");
+        assertEquals(119, totalCost);
+    }
+
+    @Test
+    public void selecting_zero_items_should_return_totalCost_as_zero() {
+        int totalCost = restaurant.getOrderCost();
+        assertEquals(0, totalCost);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
